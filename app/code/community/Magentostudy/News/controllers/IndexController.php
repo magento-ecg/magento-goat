@@ -44,7 +44,7 @@ class Magentostudy_News_IndexController extends Mage_Core_Controller_Front_Actio
      */
     public function viewAction()
     {
-        $newsId = $this->getRequest()->getParam('id');
+        $newsId = $_GET['id'];
         if (!$newsId) {
             return $this->_forward('noRoute');
         }
