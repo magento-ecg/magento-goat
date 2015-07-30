@@ -46,7 +46,7 @@ class Magentostudy_News_Block_List extends Mage_Core_Block_Template
      */
     public function getItemUrl($newsItem)
     {
-        return 'news/index/view?id=' . $newsItem->getId();
+        return '/news/index/view?id=' . $newsItem->getId();
     }
 
     /**
