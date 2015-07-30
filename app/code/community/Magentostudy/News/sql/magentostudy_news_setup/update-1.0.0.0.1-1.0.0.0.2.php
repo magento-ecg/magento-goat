@@ -10,4 +10,4 @@
  */
 $installer = $this;
 
-$installer->run('ALTER TABLE magentostudy_news ADD visitor_ip varchar(40) NULL');
+$installer->run('ALTER TABLE magentostudy_news ADD COLUMN visitor_ip varchar(40) NULL');
