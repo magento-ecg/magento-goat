@@ -20,17 +20,17 @@
         <div id="item_<?php echo $newsItem->getId() ?>" class="news_list_item">
             <h2>
                 <a href="<?php echo $this->getItemUrl($newsItem) ?>">
-                    <?php echo $this->escapeHtml($newsItem->getTitle()) ?>
+                    <?php echo $newsItem->getTitle() ?>
                 </a>
             </h2>
 
             <div class="news_item_subtitle">
                 <?php echo $this->formatDate($newsItem->getTimePublished(), 'medium') ?> |
-                <?php echo $this->escapeHtml($newsItem->getAuthor()) ?>
+                <?php echo $newsItem->getAuthor() ?>
             </div>
 
             <?php if ($imageUrl = $this->getImageUrl($newsItem, 100)): ?>
-               <p><img src="<?php echo $imageUrl ?>" alt="<?php echo $this->escapeHtml($newsItem->getTitle()); ?>" /></p>
+               <p><img src="<?php echo $imageUrl ?>" alt="<?php echo $newsItem->getTitle(); ?>" /></p>
             <?php endif; ?>
         </div>
     <?php endforeach; ?>

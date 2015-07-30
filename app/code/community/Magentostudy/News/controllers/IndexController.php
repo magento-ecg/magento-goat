@@ -29,7 +29,7 @@ class Magentostudy_News_IndexController extends Mage_Core_Controller_Front_Actio
         $listBlock = $this->getLayout()->getBlock('news.list');
 
         if ($listBlock) {
-            $currentPage = abs(intval($this->getRequest()->getParam('p')));
+            $currentPage = $this->getRequest()->getParam('p');
             if ($currentPage < 1) {
                 $currentPage = 1;
             }
@@ -66,7 +66,7 @@ class Magentostudy_News_IndexController extends Mage_Core_Controller_Front_Actio
         if ($itemBlock) {
             $listBlock = $this->getLayout()->getBlock('news.list');
             if ($listBlock) {
-                $page = (int)$listBlock->getCurrentPage() ? (int)$listBlock->getCurrentPage() : 1;
+                $page = $listBlock->getCurrentPage() ? $listBlock->getCurrentPage() : 1;
             } else {
                 $page = 1;
             }
