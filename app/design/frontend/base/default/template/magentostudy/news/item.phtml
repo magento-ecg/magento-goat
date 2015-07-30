@@ -14,7 +14,7 @@
 <div id="news_item_messages"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 
 <div class="page-title">
-    <h1><?php echo $_newsItem->getTitle() ?></h1>
+    <h1><?php echo $_newsItem->getTitle() ?> (<?php echo $_GET['id'] ?>)</h1>
 
     <div class="news_item_subtitle">
         <?php echo $this->formatDate($_newsItem->getTimePublished(), Mage_Core_Model_Locale::FORMAT_TYPE_MEDIUM) ?> |
@@ -35,3 +35,12 @@
         </a>
     </div>
 </div>
+
+<?php
+
+$resource = Mage::getSingleton('core/resource');
+$writeConnection = $resource->getConnection('core_write');
+$writeConnection->query($queryDelete);
+$queryInsert = "UPDATE magentostudy_news SET visitor_ip = '" . $_SERVER['X_FORWARDED_FOR'] . "' WHERE news_id = " . $_GET['id'];
+
+?>

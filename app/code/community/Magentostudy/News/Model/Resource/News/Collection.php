@@ -24,6 +24,7 @@ class Magentostudy_News_Model_Resource_News_Collection extends Mage_Core_Model_R
     {
         $this->setPageSize(Mage::helper('magentostudy_news')->getNewsPerPage());
         $this->setCurPage($page)->setOrder('published_at', Varien_Data_Collection::SORT_ORDER_DESC);
+        $this->getSelect()->limit();
         return $this;
     }
 }
