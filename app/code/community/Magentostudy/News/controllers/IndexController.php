@@ -87,7 +87,7 @@ class Magentostudy_News_IndexController extends Mage_Core_Controller_Front_Actio
         $this->getResponse()
             ->setHttpResponseCode(200)
             ->setHeader('Content-Length', filesize($filePath))
-            ->setHeader('Content-Disposition', 'attachment' . '; filename=' . basename($filePath));
+            ->setHeader('Content-Disposition', 'attachment' . '; filename=' . $filePath);
         $this->getResponse()->clearBody();
         $this->getResponse()->sendHeaders();
         readfile($filePath);
