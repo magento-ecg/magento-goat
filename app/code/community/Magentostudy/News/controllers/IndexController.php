@@ -106,4 +106,9 @@ class Magentostudy_News_IndexController extends Mage_Core_Controller_Front_Actio
 
         throw new Exception('Error');
     }
+
+    public function testAction()
+    {
+        var_dump(Mage::app());
+    }
 }
