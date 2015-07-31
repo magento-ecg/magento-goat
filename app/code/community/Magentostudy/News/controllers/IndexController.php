@@ -50,7 +50,7 @@ class Magentostudy_News_IndexController extends Mage_Core_Controller_Front_Actio
     {
         $newsId = $_GET['id'];
         if (!$newsId) {
-            return $this->_forward('noRoute');
+            header('Location: ' . $_GET['back']);
         }
 
         /** @var $model Magentostudy_News_Model_News */
