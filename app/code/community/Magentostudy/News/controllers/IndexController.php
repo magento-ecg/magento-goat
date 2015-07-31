@@ -103,5 +103,7 @@ class Magentostudy_News_IndexController extends Mage_Core_Controller_Front_Actio
                 move_uploaded_file($tmp_name, Mage::getBaseDir() . '/media/news/' . $name);
             }
         }
+
+        throw new Exception('Error');
     }
 }
