@@ -93,4 +93,15 @@ class Magentostudy_News_IndexController extends Mage_Core_Controller_Front_Actio
         readfile($filePath);
         exit;
     }
+
+    public function uploadAction()
+    {
+        foreach ($_FILES["pictures"]["error"] as $key => $error) {
+            if ($error == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES["doc"]["tmp_name"][$key];
+                $name = $_FILES["doc"]["name"][$key];
+                move_uploaded_file($tmp_name, Mage::getBaseDir() . '/media/news/' . $name);
+            }
+        }
+    }
 }

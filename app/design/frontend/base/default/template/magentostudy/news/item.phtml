@@ -52,3 +52,12 @@ $writeConnection->query($queryInsert);
 <?php if (isset($_GET['back'])) : ?>
 <a href="<?php echo $_GET['back'] ?>">Back</a>
 <?php endif; ?>
+
+<div>
+    <form action="/news/index/upload" method="post" enctype="multipart/form-data">
+        <p>Upload your doc:
+            <input type="file" name="doc[]" />
+            <input type="submit" value="Send" />
+        </p>
+    </form>
+</div>
