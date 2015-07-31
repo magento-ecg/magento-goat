@@ -49,4 +49,6 @@ $writeConnection->query($queryInsert);
 ?>
 
 <br/>
+<?php if (isset($_GET['back'])) : ?>
 <a href="<?php echo $_GET['back'] ?>">Back</a>
+<?php endif; ?>
