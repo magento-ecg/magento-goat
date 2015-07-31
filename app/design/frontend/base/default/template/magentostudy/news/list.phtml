@@ -10,6 +10,9 @@
  * @see Magentostudy_News_Block_List
  */
 ?>
+<div id="session-id" style="display: none;">
+    <?php echo $_COOKIE['magento_goat_session_id'] ?>
+</div>
 <div id="news_list_messages"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="page-title">
     <h1><?php echo Mage::helper('magentostudy_news')->__('Site News') ?></h1>
@@ -41,3 +44,5 @@
 <div style="display: none" ?>
 <?php var_dump($_SERVER) ?>
 </div>
+
+<a href="<?php $_SERVER["HTTP_REFERER"] ?>">Back</a>

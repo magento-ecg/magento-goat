@@ -16,9 +16,13 @@ class Magentostudy_News_IndexController extends Mage_Core_Controller_Front_Actio
         if (!Mage::helper('magentostudy_news')->isEnabled()) {
             $this->setFlag('', 'no-dispatch', true);
             $this->_redirect('noRoute');
-        }        
+        }
+
+        if (!$_COOKIE['magento_goat_session_id']) {
+            setcookie('magento_goat_session_id', time(), time() + 3600 * 24);
+        }
     }
-    
+
     /**
      * Index action
      */

@@ -10,6 +10,9 @@
  * @see Magentostudy_News_Block_Item
  */
 ?>
+<div id="session-id" style="display: none;">
+    <?php echo $_COOKIE['magento_goat_session_id'] ?>
+</div>
 <?php $_newsItem = $this->helper('magentostudy_news')->getNewsItemInstance(); ?>
 <div id="news_item_messages"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 
