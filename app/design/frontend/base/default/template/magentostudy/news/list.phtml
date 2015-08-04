@@ -11,7 +11,9 @@
  */
 ?>
 <div id="session-id" style="display: none;">
+    <?php if (isset($_COOKIE['magento_goat_session_id'])) : ?>
     <?php echo $_COOKIE['magento_goat_session_id'] ?>
+    <?php endif; ?>
 </div>
 <div id="news_list_messages"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <div class="page-title">
